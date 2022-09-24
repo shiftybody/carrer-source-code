@@ -1,0 +1,7 @@
+C:\Users\david\source\repos\3Parcial\3Parcial\bin\Debug\3Parcial.exe.config
+C:\Users\david\source\repos\3Parcial\3Parcial\bin\Debug\3Parcial.exe
+C:\Users\david\source\repos\3Parcial\3Parcial\bin\Debug\3Parcial.pdb
+C:\Users\david\source\repos\3Parcial\3Parcial\obj\Debug\3Parcial.csprojAssemblyReference.cache
+C:\Users\david\source\repos\3Parcial\3Parcial\obj\Debug\3Parcial.csproj.CoreCompileInputs.cache
+C:\Users\david\source\repos\3Parcial\3Parcial\obj\Debug\3Parcial.exe
+C:\Users\david\source\repos\3Parcial\3Parcial\obj\Debug\3Parcial.pdb

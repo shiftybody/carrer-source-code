@@ -1,0 +1,7 @@
+C:\Users\david\source\repos\Ejercicio4.9\Ejercicio4.9\bin\Debug\Ejercicio4.9.exe.config
+C:\Users\david\source\repos\Ejercicio4.9\Ejercicio4.9\bin\Debug\Ejercicio4.9.exe
+C:\Users\david\source\repos\Ejercicio4.9\Ejercicio4.9\bin\Debug\Ejercicio4.9.pdb
+C:\Users\david\source\repos\Ejercicio4.9\Ejercicio4.9\obj\Debug\Ejercicio4.9.csprojAssemblyReference.cache
+C:\Users\david\source\repos\Ejercicio4.9\Ejercicio4.9\obj\Debug\Ejercicio4.9.csproj.CoreCompileInputs.cache
+C:\Users\david\source\repos\Ejercicio4.9\Ejercicio4.9\obj\Debug\Ejercicio4.9.exe
+C:\Users\david\source\repos\Ejercicio4.9\Ejercicio4.9\obj\Debug\Ejercicio4.9.pdb

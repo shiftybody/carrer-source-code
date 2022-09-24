@@ -1,0 +1,6 @@
+C:\Users\david\source\repos\Ganacia\Ganacia\bin\Debug\Ganacia.exe.config
+C:\Users\david\source\repos\Ganacia\Ganacia\bin\Debug\Ganacia.exe
+C:\Users\david\source\repos\Ganacia\Ganacia\bin\Debug\Ganacia.pdb
+C:\Users\david\source\repos\Ganacia\Ganacia\obj\Debug\Ganacia.csproj.CoreCompileInputs.cache
+C:\Users\david\source\repos\Ganacia\Ganacia\obj\Debug\Ganacia.exe
+C:\Users\david\source\repos\Ganacia\Ganacia\obj\Debug\Ganacia.pdb

@@ -1,0 +1,7 @@
+C:\Users\david\source\repos\Ejercicio4.5\Ejercicio4.5\bin\Debug\Ejercicio4.5.exe.config
+C:\Users\david\source\repos\Ejercicio4.5\Ejercicio4.5\bin\Debug\Ejercicio4.5.exe
+C:\Users\david\source\repos\Ejercicio4.5\Ejercicio4.5\bin\Debug\Ejercicio4.5.pdb
+C:\Users\david\source\repos\Ejercicio4.5\Ejercicio4.5\obj\Debug\Ejercicio4.5.csprojAssemblyReference.cache
+C:\Users\david\source\repos\Ejercicio4.5\Ejercicio4.5\obj\Debug\Ejercicio4.5.csproj.CoreCompileInputs.cache
+C:\Users\david\source\repos\Ejercicio4.5\Ejercicio4.5\obj\Debug\Ejercicio4.5.exe
+C:\Users\david\source\repos\Ejercicio4.5\Ejercicio4.5\obj\Debug\Ejercicio4.5.pdb

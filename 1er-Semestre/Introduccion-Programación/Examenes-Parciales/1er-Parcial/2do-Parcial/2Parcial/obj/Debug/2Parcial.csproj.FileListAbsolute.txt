@@ -1,0 +1,6 @@
+C:\Users\david\source\repos\2Parcial\2Parcial\bin\Debug\2Parcial.exe.config
+C:\Users\david\source\repos\2Parcial\2Parcial\bin\Debug\2Parcial.exe
+C:\Users\david\source\repos\2Parcial\2Parcial\bin\Debug\2Parcial.pdb
+C:\Users\david\source\repos\2Parcial\2Parcial\obj\Debug\2Parcial.csproj.CoreCompileInputs.cache
+C:\Users\david\source\repos\2Parcial\2Parcial\obj\Debug\2Parcial.exe
+C:\Users\david\source\repos\2Parcial\2Parcial\obj\Debug\2Parcial.pdb

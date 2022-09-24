@@ -1,0 +1,7 @@
+C:\Users\david\source\repos\LecturaRápida\LecturaRápida\bin\Debug\LecturaRápida.exe.config
+C:\Users\david\source\repos\LecturaRápida\LecturaRápida\bin\Debug\LecturaRápida.exe
+C:\Users\david\source\repos\LecturaRápida\LecturaRápida\bin\Debug\LecturaRápida.pdb
+C:\Users\david\source\repos\LecturaRápida\LecturaRápida\obj\Debug\LecturaRápida.csprojAssemblyReference.cache
+C:\Users\david\source\repos\LecturaRápida\LecturaRápida\obj\Debug\LecturaRápida.csproj.CoreCompileInputs.cache
+C:\Users\david\source\repos\LecturaRápida\LecturaRápida\obj\Debug\LecturaRápida.exe
+C:\Users\david\source\repos\LecturaRápida\LecturaRápida\obj\Debug\LecturaRápida.pdb
