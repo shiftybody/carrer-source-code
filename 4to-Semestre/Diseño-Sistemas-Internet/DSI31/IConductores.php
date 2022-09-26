@@ -38,11 +38,11 @@ header('Content-Type: text/html; charset=UTF-8');
     $result = mysqli_query($con, $sql) or die ("Error al insertar datos".mysqli_error($con));
 
 
-    if ($result) {
-        print("Registro insertado correctamente");
-    }else{
-        print("Registro No insertado");
-    }
+    // if ($result) {
+    //     print("Registro insertado correctamente");
+    // }else{
+    //     print("Registro No insertado");
+    // }
 
     mysqli_close($con);
 

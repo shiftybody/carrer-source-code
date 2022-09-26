@@ -15,17 +15,16 @@ $Observacion = $_GET['Observacion'];
 // print("Observaciones: ".$Observacion);
 
 $sql = "INSERT INTO licencias VALUES ('$NoLicencia','$FechaExpedicion','$IDConductor','$AtributoD','$FechaVencimiento','$Observacion')";
-print("<br>".$sql);
 
 $con = mysqli_connect("localhost","root","","controlvehicular31");
 $result = mysqli_query($con, $sql) or die ("Error al insertar datos".mysqli_error($con));
 
 
-if ($result) {
-    print("Registro insertado correctamente");
-}else{
-    print("Registro No insertado");
-}
+// if ($result) {
+//     print("Registro insertado correctamente");
+// }else{
+//     print("Registro No insertado");
+// }
 
 mysqli_close($con);
 
