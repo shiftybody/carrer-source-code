@@ -16,35 +16,16 @@
     $Movimiento = $_POST['Movimiento'];
     $RFA = $_POST['RFA'];
 
-    // print("IDTarjeta: ".$IDTarjeta);
-    // print("TipoServicio: ".$TipoServicio);
-    // print("IDVehiculo: ".$IDVehiculo);
-    // print("IDPropietario: ".$IDPropietario);
-    // print("NumConstanciaInscripcion: ".$NumConstanciaInscripcion);
-    // print("Servicio: ".$Servicio);
-    // print("Origen: ".$Origen);
-    // print("Folio: ".$Folio);
-    // print("FechaVencimiento: ".$FechaVencimiento);
-    // print("CVEVehiculo: ".$CVEVehiculo);
-    // print("Uso: ".$Uso);
-    // print("Operacion: ".$Operacion);
-    // print("OficinaOperacion: ".$OficinaOperacion);
-    // print("Movimiento: ".$Movimiento);
-    // print("RFA: ".$RFA);
+    $SQL = "INSERT INTO tarjetas(IDTarjeta,TipoServicio,IDVehiculo,IDPropietario,NumConstanciaInscripcion,Servicio,Origen,Folio,FechaVencimiento,CVEVehiculo,Uso,Operacion,OficinaOperacion,Movimiento,RFA) VALUES ('$IDTarjeta','$TipoServicio','$IDVehiculo','$IDPropietario','$NumConstanciaInscripcion','$Servicio','$Origen','$Folio','$FechaVencimiento','$CVEVehiculo','$Uso','$Operacion','$OficinaOperacion','$Movimiento','$RFA')";
 
-    $sql = "INSERT INTO tarjetas(IDTarjeta,TipoServicio,IDVehiculo,IDPropietario,NumConstanciaInscripcion,Servicio,Origen,Folio,FechaVencimiento,CVEVehiculo,Uso,Operacion,OficinaOperacion,Movimiento,RFA) VALUES ('$IDTarjeta','$TipoServicio','$IDVehiculo','$IDPropietario','$NumConstanciaInscripcion','$Servicio','$Origen','$Folio','$FechaVencimiento','$CVEVehiculo','$Uso','$Operacion','$OficinaOperacion','$Movimiento','$RFA')";
-    print("<br>".$sql);
+    include("conexion.php");
+    $Con = Conectar();
+    $Result = Ejecutar($Con, $SQL) or die ("Error al insertar datos".mysqli_error($Con));
+    if ($Result) {
+        print("Registro insertado correctamente");
+    }else{
+        print("Registro No insertado");
+    }
+    Cerrar($Con);
 
-    $con = mysqli_connect("localhost","root","","controlvehicular31");
-$result = mysqli_query($con, $sql) or die ("Error al insertar datos".mysqli_error($con));
-
-
-if ($result) {
-    print("Registro insertado correctamente");
-}else{
-    print("Registro No insertado");
-}
-
-mysqli_close($con);
-    
 ?>

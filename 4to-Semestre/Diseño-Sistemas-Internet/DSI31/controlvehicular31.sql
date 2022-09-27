@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 08, 2022 at 04:16 AM
+-- Generation Time: Sep 27, 2022 at 03:01 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -49,7 +49,9 @@ CREATE TABLE `conductores` (
 --
 
 INSERT INTO `conductores` (`IDConductor`, `Nombre`, `ApellidoPaterno`, `ApellidoMaterno`, `Domicilio`, `FechaNacimiento`, `GrupoSanguineo`, `Donador`, `Firma`, `Foto`, `Antiguedad`, `NumEmergencia`, `Sexo`, `Restriccion`) VALUES
-(12345, 'Juanito', 'Guerrero', 'Ramirez', 'Av. De la Luz 55', '2005-10-15', 'A+', 'No', 'http://enlace.com', 'http://perfil.com', '2014-12-04', '4181293453', 'indistinto', 'noAplica');
+(12345, 'Juanito', 'Guerrero', 'Ramirez', 'Av. De la Luz 55', '2005-10-15', 'A+', 'No', 'http://enlace.com', 'http://perfil.com', '2014-12-04', '4181293453', 'indistinto', 'noAplica'),
+(151031, 'David ', 'Cano', 'Perez', 'mi shan', '2001-10-12', 'A+', 'Si', 'http://prueba.xml', 'http://perfil.jpg', '3589-05-21', '4181293354', 'noAplica', 'noAplica'),
+(1236548, '1', '1', '1', '1', '2022-09-10', '1', '1', '1', '1', '2022-09-24', '1', '1', '1');
 
 -- --------------------------------------------------------
 
@@ -71,6 +73,12 @@ CREATE TABLE `licencias` (
 --
 
 INSERT INTO `licencias` (`NoLicencia`, `FechaExpedición`, `IDConductor`, `AtributoD`, `FechaVencimiento`, `Observacion`) VALUES
+('21367', '2022-09-09', 12345, '1', '2022-09-23', '1'),
+('21368', '2022-09-09', 12345, '1', '2022-09-23', '1'),
+('21369', '2022-09-09', 12345, '1', '2022-09-23', '1'),
+('644621', '2022-09-16', 12345, '1', '2022-09-10', 'noAplica'),
+('644698', '2022-09-08', 12345, 'a', '2022-09-01', 'a'),
+('644699', '2022-09-08', 12345, 'b', '2022-09-01', 'a'),
 ('BR25423-3', '2004-06-04', 12345, 'desconocid', '2003-03-04', 'noAplica');
 
 -- --------------------------------------------------------
@@ -110,7 +118,8 @@ CREATE TABLE `multas` (
 --
 
 INSERT INTO `multas` (`Folio`, `Fecha`, `IDTarjeta`, `IDVehiculo`, `IDOficial`, `NoLicencia`, `Hora`, `ReporteSeccion`, `NombreVia`, `Kilometro`, `DireccionSentido`, `Municipio`, `ReferenciaLugar`, `CalificacionBoleta`, `ArticuloFundamento`, `Motivo`, `GarantiaRetenida`, `NumeroParteAccidente`, `Convenio`, `PuestoADisposicion`, `ObservacionesP`, `DepositoOficial`, `ObservacionesC`) VALUES
-('24007', '2004-03-24', 'BQ-2343', 510, '29714', 'BR25423-3', '23:05:00', 'noAplica', 'libramiento', 23, 'contr', 'Corregidora', 'noAplica', 'negativa', '34', 'noAplica', 'licencia', 5, 't', 's', 'noAplica', 500.4, 'noAplica');
+('24007', '2004-03-24', 'BQ-2343', 510, '29714', 'BR25423-3', '23:05:00', 'noAplica', 'libramiento', 23, 'contr', 'Corregidora', 'noAplica', 'negativa', '34', 'noAplica', 'licencia', 5, 't', 's', 'noAplica', 500.4, 'noAplica'),
+('24008', '2022-09-10', 'BQ-2343', 510, '29714', 'BR25423-3', '12:17:00', 'noAplica', '1', 1, '1', '1', '1', '1', '1', '1', '1', 1, '1', '1', '1', 1, '1');
 
 -- --------------------------------------------------------
 
@@ -132,7 +141,8 @@ CREATE TABLE `oficiales` (
 --
 
 INSERT INTO `oficiales` (`IDOficial`, `Nombre`, `ApellidoPaterno`, `ApellidoMaterno`, `Grupo`, `Firma`) VALUES
-('29714', 'Jaco', 'Ramirez', 'Estrada', 'C3', 'http://blob.com/firma.xml');
+('29714', 'Jaco', 'Ramirez', 'Estrada', 'C3', 'http://blob.com/firma.xml'),
+('29715', 'David', 'Julion', 'Alvarez', 'A5', 'http://holaquehace.xml');
 
 -- --------------------------------------------------------
 
@@ -155,7 +165,8 @@ CREATE TABLE `propietarios` (
 --
 
 INSERT INTO `propietarios` (`IDPropietario`, `Nombre`, `ApellidoPaterno`, `ApellidoMaterno`, `localidad`, `Municipio`, `RFC`) VALUES
-(297140, 'David ', 'Cano', 'Cabrera', 'Gto', 'Dolores Hidalgo', 'cacd011015');
+(297140, 'David ', 'Cano', 'Cabrera', 'Gto', 'Dolores Hidalgo', 'cacd011015'),
+(297141, 'Juanio', 'Gato', 'Perez', 'Salvatierra', 'Uriangato', 'xxxxxxxxxx');
 
 -- --------------------------------------------------------
 
@@ -186,7 +197,8 @@ CREATE TABLE `tarjetas` (
 --
 
 INSERT INTO `tarjetas` (`IDTarjeta`, `TipoServicio`, `IDVehiculo`, `IDPropietario`, `NumConstanciaInscripcion`, `Servicio`, `Origen`, `Folio`, `FechaVencimiento`, `CVEVehiculo`, `Uso`, `Operacion`, `OficinaOperacion`, `Movimiento`, `RFA`) VALUES
-('BQ-2343', 'Particular', 510, 297140, '34', 'autonomo', 'noAplica', '247', '2013-03-09', 127, 3, 'conjunto', 32, '89', 'noAplica');
+('BQ-2343', 'Particular', 510, 297140, '34', 'autonomo', 'noAplica', '247', '2013-03-09', 127, 3, 'conjunto', 32, '89', 'noAplica'),
+('BQ-2345', 'Particular', 510, 297140, '35', 'autonomo', 'noAplica', '24008', '2022-09-08', 125, 4, '69', 65, '5', 'noAplica');
 
 -- --------------------------------------------------------
 
@@ -218,7 +230,8 @@ CREATE TABLE `vehiculos` (
 --
 
 INSERT INTO `vehiculos` (`IDVehiculo`, `NIV`, `Tipo`, `Marca`, `SubMarca`, `Modelo`, `NumSerieV`, `Clase`, `TipoCarroceria`, `NumCilindros`, `Color`, `SerieMotor`, `Capacidad`, `CaballosFuerza`, `TipoCombustible`, `Placa`) VALUES
-(510, 'noAplica', '9', 'ford', 'navi', 'noAplica', '1323', 'A', 8, 3, 'verde', '12345', NULL, 8, 3, '42346787');
+(510, 'noAplica', '9', 'ford', 'navi', 'noAplica', '1323', 'A', 8, 3, 'verde', '12345', NULL, 8, 3, '42346787'),
+(511, 'noAplica', '9', 'NA', 'NA', 'NA', '1', 'A', 1, 1, 'rojo', '1255', NULL, 7, 4, '459566');
 
 -- --------------------------------------------------------
 
@@ -248,7 +261,8 @@ CREATE TABLE `verificacion` (
 --
 
 INSERT INTO `verificacion` (`IDVerificacion`, `IDTarjeta`, `EntidadFederativa`, `Municipio`, `NumVerificacion`, `IDTecnicoVerif`, `NumCentroVerificacion`, `FechaExpedicion`, `HoraEntrada`, `HoraSalida`, `Motivo`, `FolioVerificacion`, `Semestre`, `FechaVencimiento`) VALUES
-('23432', 'BQ-2343', 'Guanajuato', 'DoloresHidalgo', 127, '2354', 127, '2005-03-12', '21:11:00', '12:08:00', 'noAplica', 325, 4, '2022-09-19');
+('23432', 'BQ-2343', 'Guanajuato', 'DoloresHidalgo', 127, '2354', 127, '2005-03-12', '21:11:00', '12:08:00', 'noAplica', 325, 4, '2022-09-19'),
+('23433', 'BQ-2343', 'Guanajuato', 'Uriangato', 127, '2354', 127, '2022-09-16', '12:23:00', '13:23:00', 'noAplica', 325, 1, '2022-09-22');
 
 --
 -- Indexes for dumped tables
@@ -318,13 +332,13 @@ ALTER TABLE `verificacion`
 -- AUTO_INCREMENT for table `conductores`
 --
 ALTER TABLE `conductores`
-  MODIFY `IDConductor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12346;
+  MODIFY `IDConductor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15103109;
 
 --
 -- AUTO_INCREMENT for table `vehiculos`
 --
 ALTER TABLE `vehiculos`
-  MODIFY `IDVehiculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=511;
+  MODIFY `IDVehiculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=512;
 
 --
 -- Constraints for dumped tables

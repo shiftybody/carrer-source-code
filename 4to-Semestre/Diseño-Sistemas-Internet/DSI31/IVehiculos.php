@@ -16,36 +16,17 @@
     $TipoCombustible = $_GET['TipoCombustible'];
     $Placa = $_GET['Placa'];
 
-    // print("IDVehiculo: ".$IDVehiculo);
-    // print("NIV: ".$NIV);
-    // print("Tipo: ".$Tipo);
-    // print("Marca: ".$Marca);
-    // print("SubMarca: ".$SubMarca);
-    // print("Modelo: ".$Modelo);
-    // print("NumSerieV: ".$NumSerieV);
-    // print("Clase: ".$Clase);
-    // print("TipoCarroceria: ".$TipoCarroceria);
-    // print("NumCilindros: ".$NumCilindros);
-    // print("Color: ".$Color);
-    // print("SerieMotor: ".$SerieMotor);
-    // print("CaballosFuerza: ".$CaballosFuerza);
-    // print("TipoCombustible: ".$TipoCombustible);
-    // print("Placa: ".$Placa);
 
+    $SQL = "INSERT INTO vehiculos(IDVehiculo,NIV,Tipo,Marca,SubMarca,Modelo,NumSerieV,Clase,TipoCarroceria,NumCilindros,Color,SerieMotor,CaballosFuerza,TipoCombustible,Placa) VALUES ('$IDVehiculo','$NIV','$Tipo','$Marca','$SubMarca','$Modelo','$NumSerieV','$Clase','$TipoCarroceria','$NumCilindros','$Color','$SerieMotor','$CaballosFuerza','$TipoCombustible','$Placa')";
 
-    $sql = "INSERT INTO vehiculos(IDVehiculo,NIV,Tipo,Marca,SubMarca,Modelo,NumSerieV,Clase,TipoCarroceria,NumCilindros,Color,SerieMotor,CaballosFuerza,TipoCombustible,Placa) VALUES ('$IDVehiculo','$NIV','$Tipo','$Marca','$SubMarca','$Modelo','$NumSerieV','$Clase','$TipoCarroceria','$NumCilindros','$Color','$SerieMotor','$CaballosFuerza','$TipoCombustible','$Placa')";
-    print("<br>".$sql);
-
-    $con = mysqli_connect("localhost","root","","controlvehicular31");
-$result = mysqli_query($con, $sql) or die ("Error al insertar datos".mysqli_error($con));
-
-
-if ($result) {
-    print("Registro insertado correctamente");
-}else{
-    print("Registro No insertado");
-}
-
-mysqli_close($con);
+    include("conexion.php");
+    $Con = Conectar();
+    $Result = Ejecutar($Con, $SQL) or die ("Error al insertar datos".mysqli_error($Con));
+    if ($Result) {
+        print("Registro insertado correctamente");
+    }else{
+        print("Registro No insertado");
+    }
+    Cerrar($Con);
 
 ?>

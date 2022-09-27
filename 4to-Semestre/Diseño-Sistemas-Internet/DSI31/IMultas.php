@@ -24,43 +24,17 @@ $ObservacionesP = $_REQUEST['ObservacionesP'];
 $DepositoOficial = $_REQUEST['DepositoOficial'];
 $ObservacionesC = $_REQUEST['ObservacionesC'];
 
-// print("Folio: ".$Folio);
-// print("Fecha: ".$Fecha);
-// print("IDTarjeta: ".$IDTarjeta);
-// print("IDVehiculo: ".$IDVehiculo);
-// print("IDOficial: ".$IDOficial);
-// print("NoLicencia: ".$NoLicencia);
-// print("Hora: ".$Hora);
-// print("ReporteSeccion: ".$ReporteSeccion);
-// print("NombreVia: ".$NombreVia);
-// print("Kilometro: ".$Kilometro);
-// print("DireccionSentido: ".$DireccionSentido);
-// print("Municipio: ".$Municipio);
-// print("ReferenciaLugar: ".$ReferenciaLugar);
-// print("CalificacionBoleta: ".$CalificacionBoleta);
-// print("ArticuloFundamento: ".$ArticuloFundamento);
-// print("Motivo: ".$Motivo);
-// print("GarantiaRetenida: ".$GarantiaRetenida);
-// print("NumeroParteAccidente: ".$NumeroParteAccidente);
-// print("Convenio: ".$Convenio);
-// print("PuestoAdisposicion: ".$PuestoADisposicion);
-// print("ObservacionesP: ".$ObservacionesP);
-// print("DepositoOficial: ".$DepositoOficial);
-// print("ObservacionesC: ".$ObservacionesC);
 
-$sql = "INSERT INTO multas VALUES ('$Folio','$Fecha','$IDTarjeta','$IDVehiculo','$IDOficial','$NoLicencia','$Hora','$ReporteSeccion','$NombreVia','$Kilometro','$DireccionSentido','$Municipio','$ReferenciaLugar','$CalificacionBoleta','$ArticuloFundamento','$Motivo','$GarantiaRetenida','$NumeroParteAccidente','$Convenio','$PuestoADisposicion','$ObservacionesP','$DepositoOficial','$ObservacionesC')";
-print("<br>".$sql);
+$SQL = "INSERT INTO multas VALUES ('$Folio','$Fecha','$IDTarjeta','$IDVehiculo','$IDOficial','$NoLicencia','$Hora','$ReporteSeccion','$NombreVia','$Kilometro','$DireccionSentido','$Municipio','$ReferenciaLugar','$CalificacionBoleta','$ArticuloFundamento','$Motivo','$GarantiaRetenida','$NumeroParteAccidente','$Convenio','$PuestoADisposicion','$ObservacionesP','$DepositoOficial','$ObservacionesC')";
 
-$con = mysqli_connect("localhost","root","","controlvehicular31");
-$result = mysqli_query($con, $sql) or die ("Error al insertar datos".mysqli_error($con));
-
-
-if ($result) {
+include("conexion.php");
+$Con = Conectar();
+$Result = Ejecutar($Con, $SQL) or die ("Error al insertar datos".mysqli_error($Con));
+if ($Result) {
     print("Registro insertado correctamente");
 }else{
     print("Registro No insertado");
 }
-
-mysqli_close($con);
+Cerrar($Con);
 
 ?>
