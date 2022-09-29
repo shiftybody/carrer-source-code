@@ -1,7 +1,6 @@
 <?php
     header('Content-Type: text/html; charset=UTF-8');
 
-    $IDConductor = $_POST['IDConductor'];
     $Nombre = $_POST['Nombre'];
     $ApellidoPaterno = $_POST['ApellidoPaterno'];
     $ApellidoMaterno = $_POST['ApellidoMaterno'];
@@ -17,7 +16,7 @@
     $Restriccion = $_POST['Restriccion'];
 
 
-    $SQL = "INSERT INTO conductores VALUES ('$IDConductor','$Nombre','$ApellidoPaterno','$ApellidoMaterno','$Domicilio','$FechaNacimiento','$GrupoSanguineo','$Donador','$Firma','$Foto','$Antiguedad','$NumEmergencia','$Sexo','$Restriccion')";
+    $SQL = "INSERT INTO conductores VALUES ('','$Nombre','$ApellidoPaterno','$ApellidoMaterno','$Domicilio','$FechaNacimiento','$GrupoSanguineo','$Donador','$Firma','$Foto','$Antiguedad','$NumEmergencia','$Sexo','$Restriccion')";
 
     // send to DBMS
     include("conexion.php");

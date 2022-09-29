@@ -1,6 +1,5 @@
 <?php
 
-$Folio = $_REQUEST['Folio'];    
 $Fecha = $_REQUEST['Fecha'];
 $IDTarjeta = $_REQUEST['IDTarjeta'];
 $IDVehiculo = $_REQUEST['IDVehiculo'];
@@ -25,7 +24,7 @@ $DepositoOficial = $_REQUEST['DepositoOficial'];
 $ObservacionesC = $_REQUEST['ObservacionesC'];
 
 
-$SQL = "INSERT INTO multas VALUES ('$Folio','$Fecha','$IDTarjeta','$IDVehiculo','$IDOficial','$NoLicencia','$Hora','$ReporteSeccion','$NombreVia','$Kilometro','$DireccionSentido','$Municipio','$ReferenciaLugar','$CalificacionBoleta','$ArticuloFundamento','$Motivo','$GarantiaRetenida','$NumeroParteAccidente','$Convenio','$PuestoADisposicion','$ObservacionesP','$DepositoOficial','$ObservacionesC')";
+$SQL = "INSERT INTO multas VALUES ('','$Fecha','$IDTarjeta','$IDVehiculo','$IDOficial','$NoLicencia','$Hora','$ReporteSeccion','$NombreVia','$Kilometro','$DireccionSentido','$Municipio','$ReferenciaLugar','$CalificacionBoleta','$ArticuloFundamento','$Motivo','$GarantiaRetenida','$NumeroParteAccidente','$Convenio','$PuestoADisposicion','$ObservacionesP','$DepositoOficial','$ObservacionesC')";
 
 include("conexion.php");
 $Con = Conectar();

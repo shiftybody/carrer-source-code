@@ -1,6 +1,5 @@
 <?php
 
-    $IDVehiculo = $_GET['IDVehiculo'];
     $NIV = $_GET['NIV'];
     $Tipo = $_GET['Tipo'];
     $Marca = $_GET['Marca'];
@@ -17,7 +16,7 @@
     $Placa = $_GET['Placa'];
 
 
-    $SQL = "INSERT INTO vehiculos(IDVehiculo,NIV,Tipo,Marca,SubMarca,Modelo,NumSerieV,Clase,TipoCarroceria,NumCilindros,Color,SerieMotor,CaballosFuerza,TipoCombustible,Placa) VALUES ('$IDVehiculo','$NIV','$Tipo','$Marca','$SubMarca','$Modelo','$NumSerieV','$Clase','$TipoCarroceria','$NumCilindros','$Color','$SerieMotor','$CaballosFuerza','$TipoCombustible','$Placa')";
+    $SQL = "INSERT INTO vehiculos(IDVehiculo,NIV,Tipo,Marca,SubMarca,Modelo,NumSerieV,Clase,TipoCarroceria,NumCilindros,Color,SerieMotor,CaballosFuerza,TipoCombustible,Placa) VALUES ('','$NIV','$Tipo','$Marca','$SubMarca','$Modelo','$NumSerieV','$Clase','$TipoCarroceria','$NumCilindros','$Color','$SerieMotor','$CaballosFuerza','$TipoCombustible','$Placa')";
 
     include("conexion.php");
     $Con = Conectar();
