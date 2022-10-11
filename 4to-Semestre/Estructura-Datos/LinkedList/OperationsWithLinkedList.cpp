@@ -7,6 +7,7 @@ using namespace std;
 // Estructura de un nodo simplemente enlazado
 struct Node {
     int data;
+    // puntero al siguiente nodo en la lista
     Node *next;
 };
 
@@ -39,6 +40,7 @@ int main() {
 //   encontrar la posicion correcta para insertar el nuevo nodo
 // 5. Insertar nodo en la lista
 
+// recibe un puntero por referencia a la lista y el elemento a insertar 
 void insert(Node *&list, int n) {
     // reservar memoria para el nuevo nodo
     Node *newNode = new Node();
@@ -65,17 +67,17 @@ void insert(Node *&list, int n) {
 
 
     // existe 2 casos de insercion:
-    // 1. insertar al principio de la lista
-    // 2. insertar en el medio o al final de la lista
+    // 1. insertar al principio de la lista (caso 2 y 3)
+    // 2. insertar en el medio o al final de la  lista (caso 3)
 
 
     // 3. insertar en el medio o al final de la lista
     while ((aux1 != NULL) && (aux1->data < n)) {
         aux2 = aux1;
+        // 
         aux1 = aux1->next;
     }
 
-    // Si aux1 es NULL, entonces estamos al final de la lista
     if(list == aux1) {
         // insertar al principio de la lista
         list = newNode;
