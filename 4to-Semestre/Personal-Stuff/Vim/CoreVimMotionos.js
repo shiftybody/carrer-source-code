@@ -71,4 +71,4 @@ function helloword(){
 // 10G para ir a la linea 10
 // % para ir al parentesis que cierra el que esta sobre el cursor
 
-// practicar search motions, repeaters, counts, and line motions jumps.
+// practicar search motions, repeaters, counts, and line motions jumps. 
