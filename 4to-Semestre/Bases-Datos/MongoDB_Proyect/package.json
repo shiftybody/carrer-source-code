@@ -1,0 +1,25 @@
+{
+  "name": "mongodb_proyect",
+  "version": "1.0.0",
+  "description": "Proyecto para la asignatura de Bases de Datos II",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shiftybody/carrer-source-code.git#main"
+  },
+  "keywords": [
+    "MongoDB"
+  ],
+  "author": "Shiftybody",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shiftybody/carrer-source-code/issues"
+  },
+  "homepage": "https://github.com/shiftybody/carrer-source-code/tree/main#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
