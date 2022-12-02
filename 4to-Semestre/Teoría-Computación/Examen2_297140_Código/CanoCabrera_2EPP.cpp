@@ -7,18 +7,6 @@
 
 using namespace std;
 
-// funcion que determina si un caracter es un simbolo del alfabeto
-bool esSimbolo(char c, string alfabeto[])
-{
-    for (int i = 0; i < alfabeto->length(); i++)
-    {
-        if (c == alfabeto[i][0])
-        {
-            return true;
-        }
-    }
-    return false;
-}
 
 // funcion que determina si un estado es un estado del AFD
 bool esEstado(string estado, string estados[])
@@ -46,7 +34,7 @@ bool esEstadoFinal(string estado, string estadosFinales[])
     return false;
 }
 
-bool estadoSiguiente(string estadoActual, string cadena, string estados[], string alfabeto[], string estadosFinales[], string tabla[][3])
+bool estadoSiguiente(string estadoActual, string cadena, string estados[], string alfabeto[], string estadosFinales[], string estadosSiguientes[][3])
 {
 
     if (esEstadoFinal(estadoActual, estadosFinales) && cadena.length() == 0)
@@ -56,7 +44,7 @@ bool estadoSiguiente(string estadoActual, string cadena, string estados[], strin
     }
 
     // para cada simbolo de la cadena
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < estados->length() ; i++)
     {
         // si el estado actual es igual al estado de la tabla
         if (estadoActual == estados[i])
@@ -65,21 +53,17 @@ bool estadoSiguiente(string estadoActual, string cadena, string estados[], strin
             // para cada simbolo del alfabeto
             for (int j = 0; j < 3; j++)
             {
-
                 // si el simbolo de la cadena es igual al simbolo de la tabla
-
                 if (cadena[0] == alfabeto[j][0])
                 {
-
                     // si el estado siguiente es un estado del AFD
-                    if (esEstado(tabla[i][j], estados))
+                    if (esEstado(estadosSiguientes[i][j], estados))
                     {
-
-                        cout << "    "  <<estadoActual << "                  " << cadena[0] << "                  " << tabla[i][j + 1] << endl;
+                        cout << "    " << estadoActual << "                " << cadena[0] << "                " << estadosSiguientes[i][j + 1] << endl;
 
                         cout << endl;
                         // si la cadena es aceptada
-                        if (estadoSiguiente(tabla[i][j + 1], cadena.substr(1), estados, alfabeto, estadosFinales, tabla))
+                        if (estadoSiguiente(estadosSiguientes[i][j + 1], cadena.substr(1), estados, alfabeto, estadosFinales, estadosSiguientes))
                         {
                             return true;
                         }
@@ -104,10 +88,12 @@ int main()
 
     bool aceptada = false;
 
+    // lectura y muestra de la 5-tupla del AFD
     ifstream archivo;
     archivo.open("AFD.txt");
     if (archivo.is_open())
     {
+        cout << " -- 5-tupla extraida exitosamente --" << endl;
         // lee los estados del AFD
         for (int i = 0; i < 4; i++)
         {
@@ -168,6 +154,7 @@ int main()
              << "Tabla de transiciones del AFD: " << endl;
         for (int i = 0; i < 4; i++)
         {
+            cout << "    ";
             for (int j = 0; j < 3; j++)
             {
                 cout << estadosSiguientes[i][j] << " ";
@@ -178,28 +165,56 @@ int main()
         archivo.close();
     }
 
-    cout << "Palabra w = ";
-    cin >> cadena;
-    estadoActual = estadoInicial;
-
-    cout << "\nEstado actual     Caracter leido    Estado siguiente" << endl;
-    // funcion recursiva que determina si la cadena es aceptada o no por el AFD
-    aceptada = estadoSiguiente(estadoActual, cadena, estados, alfabeto, estadosFinales, estadosSiguientes);
-
-    if (aceptada)
+    // repetir mientras la cadena no sea vacia
+    do
     {
-        cout << "\n        Palabra w = "  << cadena << " ACEPTADA" <<endl;
-    }
-    else
-    {
-        cout << "\n        Palabra w = "  << cadena << " NO ACEPTADA" <<endl;
-    }
 
-    // wait for user to press any key
-   
-    system("pause"); 
+        cout << "Ingrese las palabras w separadas por espacio" << endl;
+        // leer el conjunto de palabras
+        getline(cin, cadena);
 
+        // dividir la cadena en palabras y guardarlas en un arreglo
+        string palabras[100];
+        int i = 0;
+        string palabra = "";
+        while (cadena.length() > 0)
+        {
+            // si el caracter es un espacio
+            if (cadena[0] == ' ')
+            {
+                palabras[i] = palabra;
+                palabra = "";
+                i++;
+            }
+            else
+            {
+                palabra += cadena[0];
+            }
+            cadena = cadena.substr(1);
+        }
 
+        // para cada palabra
+        for (int j = 0; j < i; j++)
+        {
+            estadoActual = estadoInicial;
+
+            cout << "Palabra w : " << palabras[j] << endl;
+
+            cout << "\nEstado actual   Caracter leido    Estado siguiente" << endl;
+            // funcion recursiva que determina si la cadena es aceptada o no por el AFD
+            aceptada = estadoSiguiente(estadoActual, palabras[j], estados, alfabeto, estadosFinales, estadosSiguientes);
+
+            if (aceptada)
+            {
+                cout << "\n        Palabra w = " << palabras[j] << " ACEPTADA" << endl;
+            }
+            else
+            {
+                cout << "\n        Palabra w = " << palabras[j] << " NO ACEPTADA" << endl;
+            }
+        }
+
+    } while (cadena.length() > 0);
 
     return 0;
 }
